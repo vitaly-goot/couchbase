@@ -6,14 +6,14 @@ Graph object provides following interfaces:
 * calculateDistances -> calculate distances for all nodes in topological order.
 * maxPath -> find node with the longest distance and reconstruct path from it up to a given source
 
-
+</br>
 Time complexity is linear: 
 * topologicalSort -> O(V+E) 
 * calculateDistance -> O(E) runs a loop for all adjacent vertices  
 * maxPath -> O(V+V) runs a loop for all vertices to find most distant node plus another loop to reconstruct a path. 
 Therefore, overall time complexity of this algorithm is O(V+E).
 
-
+</br>
 TestGraph.jpg is a visual representation of the DAG used in the test driver.
 
 to run tests:<br />
