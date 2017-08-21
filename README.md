@@ -1,5 +1,4 @@
-max_dist_in_a_DAG.py is Python library that provides interfaces to build a Graph and can compute the maximum path length from the root node to the most distant remote node under the no-loops assumption (directed acyclic graph).
-
+max_dist_in_a_DAG.py is Python library that provides interfaces to build a Graph and can compute the maximum path length from the root node to the most distant remote node under the no-loops assumption (directed acyclic graph). The algoritm is to sort graph in topological order in a linear representation when sequentailly process all vertices in topological order and for each porcessed vertex update distance and reference to the parent node if current distance is less than modified one. Then algoritm run a loop for all vertices to find most distant node and finally another loop over vertices to reconstruct the longest path.   
 
 Graph object provides following interfaces:
 * addEdge -> to build a graph
