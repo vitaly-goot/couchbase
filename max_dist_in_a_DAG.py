@@ -49,7 +49,7 @@ class Graph:
 
     # DFS based topological sort
     def topologicalSort(self, source):
-        if not self.graph.has_key(source): raise Exception('Source vertice does not exists')
+        if not self.graph.has_key(source): raise Exception('Source vertice does not exist')
         # All the vertices are not visited
         visited = {}
         stack = []
@@ -77,7 +77,7 @@ class Graph:
         while stack:
             # Get the next vertex from topological order
             v = stack.pop()
-            print v, self.graph[v]
+            #print v, self.graph[v]
             # For all adjacent vertices:
             for node in self.graph[v]:
                 # Initialize distances as -1 (infinite) when vertice has no distance preset
@@ -147,7 +147,7 @@ def testDrive():
     test(g, 6, [(None, 6), (6, 4), (4, 7), (7, 8), (8, 'b')])
     test(g, 'b', [(None, 'b')])
 
-    # negative test for dummy node, should raise 'not exists' exception
+    # negative test for dummy node, should raise 'not exist' exception
     try:
         test(g, 'c', [(None, 'b')])
     except:    
