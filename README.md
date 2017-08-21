@@ -12,7 +12,8 @@ Graph object provides following interfaces:
 Time complexity is linear: 
 * topologicalSort -> O(V+E) 
 * calculateDistance -> O(E) runs a loop for all adjacent vertices  
-* maxPath -> O(V+V) runs a loop for all vertices to find most distant node plus another loop to reconstruct a path. 
+* maxPath -> O(V+V) runs a loop for all vertices to find most distant node plus another loop to reconstruct a path. <br/>
+
 Therefore, overall time complexity of this algorithm is O(V+E).
 
 
