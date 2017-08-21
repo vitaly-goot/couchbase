@@ -49,6 +49,7 @@ class Graph:
 
     # DFS based topological sort
     def topologicalSort(self, source):
+        if not self.graph.has_key(source): raise Exception('Source vertice does not exists')
         # All the vertices are not visited
         visited = {}
         stack = []
@@ -76,7 +77,7 @@ class Graph:
         while stack:
             # Get the next vertex from topological order
             v = stack.pop()
-            #print v, self.graph[v]
+            print v, self.graph[v]
             # For all adjacent vertices:
             for node in self.graph[v]:
                 # Initialize distances as -1 (infinite) when vertice has no distance preset
@@ -145,6 +146,12 @@ def testDrive():
     test(g, 'a', [(None, 'a'), ('a', 1), (1, 2), (2, 3), (3, 6), (6, 4), (4, 7), (7, 8), (8, 'b')])
     test(g, 6, [(None, 6), (6, 4), (4, 7), (7, 8), (8, 'b')])
     test(g, 'b', [(None, 'b')])
+
+    # negative test for dummy node, should raise 'not exists' exception
+    try:
+        test(g, 'c', [(None, 'b')])
+    except:    
+        traceback.print_exc(file=sys.stderr)
     
     # Adding loop and make sure prorgam bails out with exception 
     print '-'*60
@@ -155,6 +162,7 @@ def testDrive():
     except:    
         # Oops caught some Not a DAG! DAG literally means FISH in Hebrew :)
         traceback.print_exc(file=sys.stderr)
+
 
     print '-'*60
     print 'We still sohuld be able to get max path from last node since it is out of loop.'
