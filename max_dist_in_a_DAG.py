@@ -55,8 +55,7 @@ class Graph:
         stack = []
         # Call the recursive helper function to store Topological
         # Sort starting from source vertice
-        for i in range(len(self.graph)):
-            self.dfs(source,visited,stack)
+        self.dfs(source,visited,stack)
         return stack
 
     # Calculate all distances from the source
